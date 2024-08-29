@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// src/styles.scss
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.news-card {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.news-detail img {
+  max-width: 100%;
+  height: auto;
+}

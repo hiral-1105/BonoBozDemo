@@ -1,0 +1,15 @@
+<div class="news-detail mat-elevation-z4">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ newsDetail?.title }}</mat-card-title>
+      <mat-card-subtitle>{{ newsDetail?.author || 'Unknown' }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="newsDetail?.urlToImage || 'https://via.placeholder.com/150'" alt="{{ newsDetail?.title }}">
+    <mat-card-content>
+      <p><strong>Source:</strong> {{ newsDetail?.source?.name || 'Unknown' }}</p>
+      <p><strong>Description:</strong> {{ newsDetail?.description || 'No description available' }}</p>
+      <p><strong>published Date:</strong> {{ formattedDate|| 'Unknown' }}</p>
+      <a mat-button color="primary" [href]="newsDetail?.url" target="_blank">Read more</a>
+    </mat-card-content>
+  </mat-card>
+</div>

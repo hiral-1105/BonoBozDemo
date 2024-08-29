@@ -1,0 +1,50 @@
+<div class="filters">
+  <div class="filter-row">
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Search..." [(ngModel)]="searchQuery" />
+    </mat-form-field>
+  </div>
+
+  <div class="filter-row">
+    <mat-form-field appearance="outline">
+      <mat-label>From Date</mat-label>
+      <input matInput [matDatepicker]="fromPicker" [(ngModel)]="fromDate" />
+      <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+      <mat-datepicker #fromPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>To Date</mat-label>
+      <input matInput [matDatepicker]="toPicker" [(ngModel)]="toDate" />
+      <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+      <mat-datepicker #toPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Country</mat-label>
+      <mat-select [(ngModel)]="country">
+        <mat-option value="us">USA</mat-option>
+        <mat-option value="in">India</mat-option>
+        <mat-option value="gb">UK</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="filter-row">
+    <button mat-raised-button color="primary" (click)="fetchNews()">Filter</button>
+  </div>
+</div>
+
+<div class="news-list">
+  <mat-card *ngFor="let news of newsList" class="news-card mat-elevation-z3" (click)="navigateToDetail(news)">
+    <mat-card-header>
+      <mat-card-title>{{ news.title }}</mat-card-title>
+      <mat-card-subtitle>{{ news.author || 'Unknown' }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="news.urlToImage || 'https://via.placeholder.com/150'" alt="{{ news.title }}">
+    <mat-card-content>
+      <p>{{ news.description }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

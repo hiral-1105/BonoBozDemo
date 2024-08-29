@@ -1,0 +1,52 @@
+.filters {
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.filter-row mat-form-field,
+.filter-row button {
+  flex: 1 1 auto;
+}
+
+.filter-row button {
+  flex: none;
+  width: 100%;
+}
+
+.news-list {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.news-card {
+  padding: 16px;
+}
+
+.news-card mat-card-header {
+  margin-bottom: 8px;
+}
+
+.news-card mat-card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.news-card mat-card-subtitle {
+  font-size: 0.875rem;
+  color: gray;
+}
+
+.news-card img {
+  width: 75%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
